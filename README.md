@@ -119,56 +119,55 @@ The most commonly used options are listed below.
 			<td><code>"disabled"</code></td>
 		</tr>
 		<tr>
-			<td rowspan="2"><code>overlay</code></td>
+			<td><code>overlay</code></td>
 			<td>Options for overlay (set <code>false</code> if overlay don't need)</td>
 			<td>Object or Boolean</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				<table>
-					<thead>
-						<tr>
-							<th>Overlay option</th>
-							<th>Description</th>
-							<th>Data Type</th>
-							<th>Default</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><code>box</code></td>
-							<td>Specify class which will be added to overlay block</td>
-							<td>String</td>
-							<td><code>"simplebox-overlay"</code></td>
-						</tr>
-						<tr>
-							<td><code>color</code></td>
-							<td>Background color for overlay</td>
-							<td>String</td>
-							<td><code>"black"</code></td>
-						</tr>
-						<tr>
-							<td><code>closeClick</code></td>
-							<td>Enable this option to close modal when you click on overlay</td>
-							<td>Boolean</td>
-							<td><code>true</code></td>
-						</tr>
-						<tr>
-							<td><code>opacity</code></td>
-							<td>Set CSS opacity to overlay</td>
-							<td>Number</td>
-							<td><code>0.3</code></td>
-						</tr>
-					</tbody>
-				</table>
-			</td>
+			<td>{overlay options are listed below}</td>
 		</tr>
 		<tr>
 			<td><code>positionFrom</code></td>
 			<td>Set modal position from HTML element (example: <code>"#block"</code>)</td>
 			<td>String or Boolean</td>
 			<td><code>false</code></td>
+		</tr>
+	</tbody>
+</table>
+
+### Overlay options
+
+<table>
+	<thead>
+		<tr>
+			<th>Overlay option</th>
+			<th>Description</th>
+			<th>Data Type</th>
+			<th>Default</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>box</code></td>
+			<td>Specify class which will be added to overlay block</td>
+			<td>String</td>
+			<td><code>"simplebox-overlay"</code></td>
+		</tr>
+		<tr>
+			<td><code>color</code></td>
+			<td>Background color for overlay</td>
+			<td>String</td>
+			<td><code>"black"</code></td>
+		</tr>
+		<tr>
+			<td><code>closeClick</code></td>
+			<td>Enable this option to close modal when you click on overlay</td>
+			<td>Boolean</td>
+			<td><code>true</code></td>
+		</tr>
+		<tr>
+			<td><code>opacity</code></td>
+			<td>Set CSS opacity to overlay</td>
+			<td>Number</td>
+			<td><code>0.3</code></td>
 		</tr>
 	</tbody>
 </table>
