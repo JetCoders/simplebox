@@ -64,7 +64,7 @@ or, if you want open modal without link:
 
 ```js
 $(function() {
-$.simplebox('#modal01');
+	$.simplebox('#modal01');
 });
 ```
 
@@ -101,30 +101,28 @@ The most commonly used options are listed below.
 	</thead>
 	<tbody>
 		<tr>
-			<td>`duration`</td>
+			<td><code>duration</code></td>
 			<td>Duration in milliseconds</td>
 			<td>Number</td>
-			<td>300</td>
+			<td><code>300</code></td>
 		</tr>
 		<tr>
-			<td>`linkClose`</td>
+			<td><code>linkClose</code></td>
 			<td>Specify class which will be added to close button</td>
 			<td>String</td>
-			<td>".close, .btn-close"</td>
+			<td><code>".close, .btn-close"</code></td>
 		</tr>
 		<tr>
-			<td>`disableClass`</td>
+			<td><code>disableClass</code></td>
 			<td>Specify class which will be added to form submit buttons</td>
 			<td>String</td>
-			<td>"disabled"</td>
+			<td><code>"disabled"</code></td>
 		</tr>
 		<tr>
-			<td rowspan="2">`overlay`</td>
-			<td>Options for overlay (set `false` if overlay don't need)</td>
+			<td rowspan="2"><code>overlay</code></td>
+			<td>Options for overlay (set <code>false</code> if overlay don't need)</td>
 			<td>Object or Boolean</td>
-			<td>
-				
-			</td>
+			<td></td>
 		</tr>
 		<tr>
 			<td colspan="3">
@@ -139,38 +137,38 @@ The most commonly used options are listed below.
 					</thead>
 					<tbody>
 						<tr>
-							<td>`box`</td>
+							<td><code>box</code></td>
 							<td>Specify class which will be added to overlay block</td>
 							<td>String</td>
-							<td>"simplebox-overlay"</td>
+							<td><code>"simplebox-overlay"</code></td>
 						</tr>
 						<tr>
-							<td>`color`</td>
+							<td><code>color</code></td>
 							<td>Background color for overlay</td>
 							<td>String</td>
-							<td>"black"</td>
+							<td><code>"black"</code></td>
 						</tr>
 						<tr>
-							<td>`closeClick`</td>
+							<td><code>closeClick</code></td>
 							<td>Enable this option to close modal when you click on overlay</td>
 							<td>Boolean</td>
-							<td>true</td>
+							<td><code>true</code></td>
 						</tr>
 						<tr>
-							<td>`opacity`</td>
+							<td><code>opacity</code></td>
 							<td>Set CSS opacity to overlay</td>
 							<td>Number</td>
-							<td>0.3</td>
+							<td><code>0.3</code></td>
 						</tr>
 					</tbody>
 				</table>
 			</td>
 		</tr>
 		<tr>
-			<td>`positionFrom`</td>
-			<td>Set modal position from HTML element (example: `"#block"`)</td>
+			<td><code>positionFrom</code></td>
+			<td>Set modal position from HTML element (example: <code>"#block"</code>)</td>
 			<td>String or Boolean</td>
-			<td>false</td>
+			<td><code>false</code></td>
 		</tr>
 	</tbody>
 </table>
