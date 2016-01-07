@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Simplebox</title>
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.simplebox.min.js"></script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+</head>
+<body>
+	<div id="main">
+		<h1>JetCoders Simplebox</h1>
+		<p>Fast, light, mobile-friendly popup and modal plugin.</p>
+		<p>The script requires jQuery 1.7+ to work properly. To add script in your page simply attach file - <code>jquery.simplebox.js</code>:</p>
+
+		<pre>&lt;script src="js/jquery.js">&lt;/script>
+&lt;script src="js/jquery.simplebox.js">&lt;/script></pre>
+		<p>For start you need create HTML for modal and put it in to the end of <code>&lt;body></code>:</p>
+		<pre>&lt;div class="modal" id="modal01">
+	&lt;span class="close">close&lt;/span>
+	&lt;p>Some text&lt;/p>
+&lt;/div></pre>
+		<p>Then create link with modal ID and class="simplebox":</p>
+		<pre>&lt;a class="simplebox" href="#modal01">Open modal01&lt;/a> 
+
+&lt;button class="simplebox" type="button" data-href="#modal02">Open modal02&lt;/button></pre>
+		<p>Next step is create simple CSS for modal:</p>
+		<pre>.modal{
+	width:500px;
+	padding:30px 20px;
+	border: 1px solid #000;
+	position:absolute;
+	background:#fff;
+	left:-9999px;
+	top:-9999px;
+	z-index:1000;
+}</pre>
+		<p>When the page is loaded all you have to do is simply call function:</p>
+		<pre>$(function() {
+	$('.simplebox').simplebox();
+});</pre>
+
+<p>or, if you want open modal without link:</p>
+
+<pre>$(function() {
+	$.simplebox('#modal01');
+});</pre>
+		<h3>Example:</h3>
+		<ul>
+			<li><a class="simplebox" href="#modal01">Open <strong>Modal 01</strong> with <code>&lt;a></code></a></li>
+			<li><a class="simplebox3 positionFrom" href="#modal01">Open <strong>Modal 01</strong> with option <code>positionFrom</code></a></li>
+			<li><button class="simplebox" type="button" data-href="#modal01">Open <strong>Modal 01</strong> with <code>&lt;button></code></button></li>
+			<li><a class="simplebox" href="#modal02">Open <strong>Modal 02</strong></a></li>
+		</ul>
+
+		<h2>Setting Options</h2>
+		<p>There are two ways of specifying options:</p>
+		<pre>$('.simplebox').simplebox({
+	duration: 300,
+	linkClose: '.close, .btn-close'
+});</pre>
+		<p>or</p>
+		<pre>$.simplebox('#modal01', {
+	duration: 300,
+	linkClose: '.close, .btn-close'
+});</pre>
+		<h2>Options</h2>
+		<p>The most commonly used options are listed below.</p>
+
+		<table>
+			<tr>
+				<th>Option</th>
+				<th>Description</th>
+				<th>Data Type</th>
+				<th>Default</th>
+			</tr>
+			<tr>
+				<td><code>duration</code></td>
+				<td>Duration in milliseconds</td>
+				<td>Number</td>
+				<td>300</td>
+			</tr>
+			<tr>
+				<td><code>linkClose</code></td>
+				<td>Specify class which will be added to close button</td>
+				<td>String</td>
+				<td>".close, .btn-close"</td>
+			</tr>
+			<tr>
+				<td><code>disableClass</code></td>
+				<td>Specify class which will be added to form submit buttons</td>
+				<td>String</td>
+				<td>"disabled"</td>
+			</tr>
+			<tr>
+				<td rowspan="2"><code>overlay</code></td>
+				<td>Options for overlay (set <code>false</code> if overlay don't need)</td>
+				<td>Object or Boolean</td>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<table>
+						<tr>
+							<th>Overlay option</th>
+							<th>Description</th>
+							<th>Data Type</th>
+							<th>Default</th>
+						</tr>
+						<tr>
+							<td><code>box</code></td>
+							<td>Specify class which will be added to overlay block</td>
+							<td>String</td>
+							<td>"simplebox-overlay"</td>
+						</tr>
+						<tr>
+							<td><code>color</code></td>
+							<td>Background color for overlay</td>
+							<td>String</td>
+							<td>"black"</td>
+						</tr>
+						<tr>
+							<td><code>closeClick</code></td>
+							<td>Enable this option to close modal when you click on overlay</td>
+							<td>Boolean</td>
+							<td>true</td>
+						</tr>
+						<tr>
+							<td><code>opacity</code></td>
+							<td>Set CSS opacity to overlay</td>
+							<td>Number</td>
+							<td>0.3</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td><code>positionFrom</code></td>
+				<td>Set modal position from HTML element (example: <code>"#block"</code>)</td>
+				<td>String or Boolean</td>
+				<td>false</td>
+			</tr>
+		</table>
+
+		<h2>Methods</h2>
+
+		<table>
+			<tr>
+				<th>Method</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><code>$.simplebox.close()</code></td>
+				<td>
+					This method is a global and will close any opened simplebox
+				</td>
+			</tr>
+		</table>
+
+		<h2>Events</h2>
+
+		<table>
+			<tr>
+				<th>Event</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><code>onOpen: function(obj){...}</code></td>
+				<td>This event start befor simplebox is open</td>
+			</tr>
+			<tr>
+				<td><code>afterOpen: function(obj){...}</code></td>
+				<td>This event start after simplebox is open</td>
+			</tr>
+			<tr>
+				<td><code>onClose: function(obj){...}</code></td>
+				<td>This event start befor simplebox is close</td>
+			</tr>
+			<tr>
+				<td><code>afterClose: function(obj){...}</code></td>
+				<td>This event start after simplebox is close</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="modal" id="modal01">
+		<h2>Modal 01</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel magna iaculis augue eleifend malesuada. Morbi 
+		luctus dui mollis, accumsan mauris ut, malesuada lectus. Donec finibus pulvinar rhoncus. Aenean porta nisl eu 
+		justo sodales pharetra. Suspendisse aliquet fringilla tortor, in fermentum mauris imperdiet nec. Aliquam et 
+		egestas massa, et tempor nulla. Sed sed dolor sed sapien commodo tincidunt quis nec orci. Sed semper felis ac 
+		velit scelerisque, quis lacinia tortor hendrerit. Sed eget dolor nunc.</p>
+		
+		<a class="simplebox" href="#modal02">Open <strong>Modal 02</strong></a>
+		<br /><br />
+		<a class="close2" href="#">Close modal with method <code>$.simplebox.close()</code></a>
+		<br /><br />
+		<p>Curabitur at enim quis lacus consectetur euismod. Donec porta posuere turpis eget posuere. Vestibulum iaculis 
+		mi sit amet magna condimentum, in aliquet dui dignissim. Cras in porttitor lectus. Sed id iaculis massa, auctor 
+		facilisis massa. Mauris volutpat hendrerit iaculis. Suspendisse fermentum lorem sit amet augue ornare, eu laoreet 
+		leo rutrum.</p>
+		<span class="close">Close modal</span>
+	</div>
+	<div class="modal" id="modal02">
+		<h2>Modal 02</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel magna iaculis augue eleifend malesuada. Morbi 
+		luctus dui mollis, accumsan mauris ut, malesuada lectus. Donec finibus pulvinar rhoncus. Aenean porta nisl eu 
+		justo sodales pharetra.</p>
+		
+		<a class="simplebox" href="#modal01">Open <strong>Modal 01</strong></a>
+		<br /><br />
+		<p>Curabitur at enim quis lacus consectetur euismod. Donec porta posuere turpis eget posuere. Vestibulum iaculis 
+		mi sit amet magna condimentum, in aliquet dui dignissim. Cras in porttitor lectus. Sed id iaculis massa, auctor 
+		facilisis massa. Mauris volutpat hendrerit iaculis.</p>
+		<span class="close">Close modal</span>
+	</div>
+</body>
+</html>
