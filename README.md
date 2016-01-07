@@ -122,7 +122,7 @@ The most commonly used options are listed below.
 			<td><code>overlay</code></td>
 			<td>Options for overlay (set <code>false</code> if overlay don't need)</td>
 			<td>Object or Boolean</td>
-			<td>Overlay options are listed [below](https://github.com/JetCoders/simplebox#overlay-options)</td>
+			<td>Overlay options are listed <a href="https://github.com/JetCoders/simplebox#overlay-options">below</a></td>
 		</tr>
 		<tr>
 			<td><code>positionFrom</code></td>
