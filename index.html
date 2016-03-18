@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simplebox by JetCoders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Simplebox</h1>
+      <h2 class="project-tagline">jQuery simplebox</h2>
+      <a href="https://github.com/JetCoders/simplebox" class="btn">View on GitHub</a>
+      <a href="https://github.com/JetCoders/simplebox/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/JetCoders/simplebox/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jetcoders-jquery-simplebox" class="anchor" href="#jetcoders-jquery-simplebox" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JetCoders jQuery Simplebox</h1>
+
+<p>Fast, light, mobile-friendly popup and modal plugin.</p>
+
+<h2>
+<a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser support</h2>
+
+<p>The script was tested in the following browsers:</p>
+
+<ul>
+<li>Internet Explorer 7+</li>
+<li>Firefox</li>
+<li>Chrome</li>
+<li>Safari</li>
+<li>Opera</li>
+<li>Android 4+</li>
+<li>iOS7+</li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>The script requires jQuery 1.7+ to work properly. To add script in your page simply attach file - <code>jquery.simplebox.js</code>:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/jquery.simplebox.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>For start you need create HTML for modal and put it in to the end of <code>&lt;body&gt;</code>:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>modal<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>modal01<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>close<span class="pl-pds">"</span></span>&gt;close&lt;/<span class="pl-ent">span</span>&gt;
+    &lt;<span class="pl-ent">p</span>&gt;Some text&lt;/<span class="pl-ent">p</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>Then create link with modal ID and <code>class="simplebox"</code>:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">a</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>simplebox<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#modal01<span class="pl-pds">"</span></span>&gt;Open modal01&lt;/<span class="pl-ent">a</span>&gt; 
+
+&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>simplebox<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>button<span class="pl-pds">"</span></span> <span class="pl-e">data-href</span>=<span class="pl-s"><span class="pl-pds">"</span>#modal02<span class="pl-pds">"</span></span>&gt;Open modal02&lt;/<span class="pl-ent">button</span>&gt;</pre></div>
+
+<p>Next step is create simple CSS for modal:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.modal</span>{
+    <span class="pl-c1"><span class="pl-c1">width</span></span>:<span class="pl-c1">500<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">padding</span></span>:<span class="pl-c1">30<span class="pl-k">px</span></span> <span class="pl-c1">20<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#000</span>;
+    <span class="pl-c1"><span class="pl-c1">position</span></span>:<span class="pl-c1">absolute</span>;
+    <span class="pl-c1"><span class="pl-c1">background</span></span>:<span class="pl-c1">#fff</span>;
+    <span class="pl-c1"><span class="pl-c1">left</span></span>:<span class="pl-c1">-9999<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">top</span></span>:<span class="pl-c1">-9999<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">z-index</span></span>:<span class="pl-c1">1000</span>;
+}</pre></div>
+
+<p>When the page is loaded all you have to do is simply call function:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-k">function</span>() {
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.simplebox<span class="pl-pds">'</span></span>).<span class="pl-en">simplebox</span>();
+});</pre></div>
+
+<p>or, if you want open modal without link:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-k">function</span>() {
+    <span class="pl-smi">$</span>.<span class="pl-en">simplebox</span>(<span class="pl-s"><span class="pl-pds">'</span>#modal01<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h2>
+<a id="setting-options" class="anchor" href="#setting-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting Options</h2>
+
+<p>There are two ways of specifying options:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.simplebox<span class="pl-pds">'</span></span>).<span class="pl-en">simplebox</span>({
+    duration<span class="pl-k">:</span> <span class="pl-c1">300</span>,
+    linkClose<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.close, .btn-close<span class="pl-pds">'</span></span>
+});</pre></div>
+
+<p>or</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">$</span>.<span class="pl-en">simplebox</span>(<span class="pl-s"><span class="pl-pds">'</span>#modal01<span class="pl-pds">'</span></span>, {
+    duration<span class="pl-k">:</span> <span class="pl-c1">300</span>,
+    linkClose<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.close, .btn-close<span class="pl-pds">'</span></span>
+});</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+
+<p>The most commonly used options are listed below.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+            <th>Data Type</th>
+            <th>Default</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>duration</code></td>
+            <td>Duration in milliseconds</td>
+            <td>Number</td>
+            <td><code>300</code></td>
+        </tr>
+        <tr>
+            <td><code>linkClose</code></td>
+            <td>Specify class which will be added to close button</td>
+            <td>String</td>
+            <td><code>".close, .btn-close"</code></td>
+        </tr>
+        <tr>
+            <td><code>disableClass</code></td>
+            <td>Specify class which will be added to form submit buttons</td>
+            <td>String</td>
+            <td><code>"disabled"</code></td>
+        </tr>
+        <tr>
+            <td><code>overlay</code></td>
+            <td>Options for overlay (set <code>false</code> if overlay don't need)</td>
+            <td>Object or Boolean</td>
+            <td>Overlay options are listed <a href="https://github.com/JetCoders/simplebox#overlay-options">below</a>
+</td>
+        </tr>
+        <tr>
+            <td><code>positionFrom</code></td>
+            <td>Set modal position from HTML element (example: <code>"#block"</code>)</td>
+            <td>String or Boolean</td>
+            <td><code>false</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>
+<a id="overlay-options" class="anchor" href="#overlay-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overlay options</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Overlay option</th>
+            <th>Description</th>
+            <th>Data Type</th>
+            <th>Default</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>box</code></td>
+            <td>Specify class which will be added to overlay block</td>
+            <td>String</td>
+            <td><code>"simplebox-overlay"</code></td>
+        </tr>
+        <tr>
+            <td><code>color</code></td>
+            <td>Background color for overlay</td>
+            <td>String</td>
+            <td><code>"black"</code></td>
+        </tr>
+        <tr>
+            <td><code>closeClick</code></td>
+            <td>Enable this option to close modal when you click on overlay</td>
+            <td>Boolean</td>
+            <td><code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>opacity</code></td>
+            <td>Set CSS opacity to overlay</td>
+            <td>Number</td>
+            <td><code>0.3</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>$.simplebox.close()</code></td>
+            <td>
+                This method is a global and will close any opened simplebox
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>
+<a id="events" class="anchor" href="#events" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>onOpen: function(obj){...}</code></td>
+            <td>This event start befor simplebox is open</td>
+        </tr>
+        <tr>
+            <td><code>afterOpen: function(obj){...}</code></td>
+            <td>This event start after simplebox is open</td>
+        </tr>
+        <tr>
+            <td><code>onClose: function(obj){...}</code></td>
+            <td>This event start befor simplebox is close</td>
+        </tr>
+        <tr>
+            <td><code>afterClose: function(obj){...}</code></td>
+            <td>This event start after simplebox is close</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>This script is licensed under the <a href="LICENSE.txt">MIT License</a>.</p>
+
+<p>Copyright 2015-2016 <a href="http://jetcoders.com/contact">JetCoders.com</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/JetCoders/simplebox">Simplebox</a> is maintained by <a href="https://github.com/JetCoders">JetCoders</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
